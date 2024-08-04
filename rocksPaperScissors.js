@@ -1,11 +1,16 @@
-//Get computer choice
-  //declare computerChoice variable
-  //define function getComputerChoice 
-    //use Math.random * 100 to generate a number
+let computerChoice = getComputerChoice();
+function getComputerChoice() {  //Get computer choice
+  let number = Math.random() * 100; //use Math.random * 100 to generate a number
+  if (number <= 33) return "rock"; 
       //IF number is <= 33 computerChoice = rock
+  else if (number > 33 && number < 67) return "paper";   
       //ElseIf number is >33 && <66 computerChoice = paper 
+  else return "scissors";
       //Else computerChoice = scissors
-    //return computerChoice
+}
+
+console.log(computerChoice);
+
   //define function getHumanChoice
     //use prompt method to get user input
       //IF user input is rock, humanChoice = rock
