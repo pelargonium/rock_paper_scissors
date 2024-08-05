@@ -9,15 +9,27 @@ function getComputerChoice() {  //Get computer choice
       //Else computerChoice = scissors
 }
 
-console.log(computerChoice);
-
-  //define function getHumanChoice
-    //use prompt method to get user input
-      //IF user input is rock, humanChoice = rock
-      //ElseIf user input is paper, humanChoice = paper
-      //elseif user input is scissors, humanChoice = scissors
-      //else display wrong input error and repeat prompt
-    // return humanChoice
+let humanChoice = getHumanChoice();
+function getHumanChoice() 
+{   //define function getHumanChoice
+  let output;
+  while (output === undefined) //loop until valid input
+    {
+    let input = prompt("Type rock, paper, or scissors:");  //use prompt method to get user input
+    if (input.toLowerCase() === "rock" || input.toLowerCase() === "paper" || input.toLowerCase() === "scissors") //IF user input is rock, paper or scissors 
+      {
+      output = input.toLowerCase();
+      return output; // return humanChoice
+      }
+    else 
+      {
+      console.log("Invalid entry. Try again!" )//else display wrong input error and repeat prompt
+      }
+    }
+}
+   console.log(humanChoice);
+      
+    
 //define players score variables
 //define function playRound that accepts two parameters
   //IF humanChoice == rock && computerChoice == paper, display loss prompt, iterate computerScore variable
