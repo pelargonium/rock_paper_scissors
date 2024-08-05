@@ -1,7 +1,29 @@
 let humanScore = 0; //define players score variable
 let computerScore = 0; //define computer score variable
 
-let computerChoice = getComputerChoice();
+playGame(humanScore,computerScore);
+
+function playGame(human,computer)
+{
+do
+  {
+    let computerChoice = getComputerChoice();
+    let humanChoice = getHumanChoice();
+    playRound(computerChoice, humanChoice);
+  }
+  while (humanScore <= 2 && computerScore <= 2);
+
+  if (humanScore > computerScore) 
+  {
+    console.log("You won the game!");
+  }
+  else
+  {
+    console.log("You lost the game!");
+  }
+  return;
+}
+
 function getComputerChoice() {  //Get computer choice
   let number = Math.random() * 100; //use Math.random * 100 to generate a number
   if (number <= 33) return "rock"; 
@@ -12,7 +34,7 @@ function getComputerChoice() {  //Get computer choice
       //Else computerChoice = scissors
 }
 
-let humanChoice = getHumanChoice();
+
 function getHumanChoice() 
 {   //define function getHumanChoice
   let output;
@@ -37,7 +59,7 @@ function playRound(computer, human) //define function playRound that accepts two
   if (answers[computer][0] === human) //checks if human choice is equal to win condition
     {
       humanScore++; //increments human score
-      console.log(`You lose! ${human.charAt(0).toUpperCase()+human.slice(1)} beats ${computer}.`)
+      console.log(`You win! ${human.charAt(0).toUpperCase()+human.slice(1)} beats ${computer}.`)
       return;
     }
   else if (answers[computer][1] === human) //checks if human choice is equal to loss condition
@@ -52,11 +74,6 @@ function playRound(computer, human) //define function playRound that accepts two
       return;
     }
 }   
-console.log(computerChoice);
-console.log(humanChoice);
-playRound(computerChoice, humanChoice);
-console.log(humanScore);
-console.log(computerScore);
 
   //IF humanChoice == rock && computerChoice == paper, display loss prompt, iterate computerScore variable
     //If computerChoice == paper
