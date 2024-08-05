@@ -33,20 +33,22 @@ function getHumanChoice()
 
 function playRound(computer, human) //define function playRound that accepts two parameters
 {
-  const answers = {"rock": ["paper","scissors"],"paper": ["scissors","rock"],"scissors": ["rock","paper"]};
-  if (answers[computer][0] === human) 
+  const answers = {"rock": ["paper","scissors"],"paper": ["scissors","rock"],"scissors": ["rock","paper"]}; //object containing arrays of win/loss conditions for each computer choice
+  if (answers[computer][0] === human) //checks if human choice is equal to win condition
     {
-      humanScore++;
+      humanScore++; //increments human score
+      console.log(`You lose! ${human.charAt(0).toUpperCase()+human.slice(1)} beats ${computer}.`)
       return;
     }
-  else if (answers[computer][1] === human) 
+  else if (answers[computer][1] === human) //checks if human choice is equal to loss condition
     {
-      computerScore++;
+      computerScore++;  //increments computer score
+      console.log(`You lose! ${computer.charAt(0).toUpperCase()+computer.slice(1)} beats ${human}.`)
       return;
     }
   else 
     {
-      console.log("Draw! Try again!")
+      console.log("Draw! Try again!")  //declares draw
       return;
     }
 }   
