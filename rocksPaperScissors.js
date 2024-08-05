@@ -1,3 +1,6 @@
+let humanScore = 0; //define players score variable
+let computerScore = 0; //define computer score variable
+
 let computerChoice = getComputerChoice();
 function getComputerChoice() {  //Get computer choice
   let number = Math.random() * 100; //use Math.random * 100 to generate a number
@@ -27,11 +30,32 @@ function getHumanChoice()
       }
     }
 }
-   console.log(humanChoice);
-      
-    
-//define players score variables
-//define function playRound that accepts two parameters
+
+function playRound(computer, human) //define function playRound that accepts two parameters
+{
+  const answers = {"rock": ["paper","scissors"],"paper": ["scissors","rock"],"scissors": ["rock","paper"]};
+  if (answers[computer][0] === human) 
+    {
+      humanScore++;
+      return;
+    }
+  else if (answers[computer][1] === human) 
+    {
+      computerScore++;
+      return;
+    }
+  else 
+    {
+      console.log("Draw! Try again!")
+      return;
+    }
+}   
+console.log(computerChoice);
+console.log(humanChoice);
+playRound(computerChoice, humanChoice);
+console.log(humanScore);
+console.log(computerScore);
+
   //IF humanChoice == rock && computerChoice == paper, display loss prompt, iterate computerScore variable
     //If computerChoice == paper
       //Display loss message, iterate computerScore variable
