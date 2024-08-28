@@ -14,6 +14,8 @@ menu.addEventListener('click', (event) => {
       case 'rock':
           console.log('Rock was clicked');
           playerChoice = "rock";
+          document.querySelector("#message").innerText = 'Rock was clicked';
+          document.querySelector("#playerChoice > .rock").style.backgroundColor = "blue";
           console.log(playerChoice);
           computerChoice = getComputerChoice();
           console.log(computerChoice);
@@ -23,6 +25,7 @@ menu.addEventListener('click', (event) => {
       case 'paper':
           console.log('Paper was clicked');
           playerChoice = "paper";
+          document.querySelector("#playerChoice > .paper").style.backgroundColor = "blue";
           console.log(playerChoice);
           computerChoice = getComputerChoice();
           console.log(computerChoice);
@@ -32,6 +35,7 @@ menu.addEventListener('click', (event) => {
       case 'scissors':
           console.log('Scissors was clicked');
           playerChoice = "scissors";
+          document.querySelector("#playerChoice > .scissors").style.backgroundColor = "blue";
           console.log(playerChoice);
           computerChoice = getComputerChoice();
           console.log(computerChoice);
@@ -43,27 +47,15 @@ menu.addEventListener('click', (event) => {
 
 function cleanup() {
   console.log(`Player: ${humanScore}, Computer: ${computerScore}`);
-          playerChoice ="";
-          computerChoice ="";
+  document.querySelector("#computerScore").innerText = `${computerScore}`;
+  document.querySelector("#playerScore").innerText = `${humanScore}`;
+  playerChoice ="";
+  computerChoice ="";
+  document.querySelectorAll("button").style.backgroundColor = "gray";
 }
 
-//on button click
-  //save player choice to humanChoice
-  //get computer choice
-  //compare input
-  //display outcome
-  //change score
-  //check for win conditions
-  //reset humanChoice
-
-// function playGame(human,computer)
-                                                     
-
-//     let computerChoice = getComputerChoice();
-//     console.log(computerChoice);
-
-//     playRound(computerChoice, humanChoice);
-
+// function playGame(human,computer)     
+// {                                    
 //   while (humanScore <= 1 && computerScore <= 1);
 
 //   if (humanScore > computerScore) 
@@ -87,32 +79,6 @@ function getComputerChoice() {  //Get computer choice
       //Else computerChoice = scissors
 }
 
-
-
-  // let rock = document.getElementById("rock");
-  // let paper = document.getElementById("paper");
-  // let scissors = document.getElementById("scissors");
-
-
-  // rock.addEventListener("click", function(event){output = "rock"});
-  // paper.addEventListener("click", function(event){output = "paper"});
-  // scissors.addEventListener("click", function(event){output = "scissors"});
-
-
-
-    // let input = prompt("Type rock, paper, or scissors:");  //use prompt method to get user input
-    // if (input.toLowerCase() === "rock" || input.toLowerCase() === "paper" || input.toLowerCase() === "scissors") //IF user input is rock, paper or scissors 
-    //   {
-    //   output = input.toLowerCase();
-    //   return output; // return humanChoice
-    //   }
-    // else 
-    //   {
-    //   console.log("Invalid entry. Try again!" )//else display wrong input error and repeat prompt
-    //   }
-// }
-
-
 function playRound(computer, human) //define function playRound that accepts two parameters
 {
   const answers = {"rock": ["paper","scissors"],"paper": ["scissors","rock"],"scissors": ["rock","paper"]}; //object containing arrays of win/loss conditions for each computer choice
@@ -135,35 +101,4 @@ function playRound(computer, human) //define function playRound that accepts two
     }
 }   
 
-  //IF humanChoice == rock && computerChoice == paper, display loss prompt, iterate computerScore variable
-    //If computerChoice == paper
-      //Display loss message, iterate computerScore variable
-    //elseIf computerChoice == scissors
-      //Display win message, iterate humanScore variable
-    //else 
-      //Display draw message, end round
-  //ELSEIF humanChoice == paper
-    //IF computerChoice == Rock
-      //Display win message, iterate humanScore variable
-    //elseif computerChoice == scissors
-      //Display loss message, iterate computerScore variable
-    //else
-      //Display draw message, end round
-  //Else
-    //If computerChoice == Rock
-      //Display loss message, iterate computerScore variable
-    //If computerChoice == Paper
-      //Display win message, iterate humanScore variable
-    //else
-      //Display draw message, end round
-//Store score in score variables
-
-//Define function playGame
-  //While computerScore + humanScore < 5
-    //Run playRound
-  //If humanScore > computerScore
-    //Display victory message
-  //Else
-    //Display loss message
-    
-//Repeat with a loop until best of 5 rounds
+// Change color of buttons depending on win/loss/draw conditions

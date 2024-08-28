@@ -4,18 +4,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rocks Paper Scissors</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bevan:ital@0;1&display=swap');
+      </style>
 </head>
 <body>
+  <span id = "head", >Rock, Paper, Scissors</span>
   <div class = "board">
-    <!-- <div class = "row">
-      <button type="button" class = "rock">ROCK</button>
-      <button type="button" class = "paper">PAPER</button>
-      <button type="button" class = "scissors">SCISSORS</button>
-    </div> -->
-    <div class = "row" id="playerChoice">
-      <button type="button" id="rock" class = "rock">ROCK</button>
-      <button type="button" id="paper" class = "paper">PAPER</button>
-      <button type="button" id="scissors" class = "scissors">SCISSORS</button>
+    <div id = "computerDisplay" class = "display">
+      <div id = "computerHeader" class = "header">
+        <p id = "computerName">COMPUTER</p>
+        <p id = "computerScore">0</p>
+      </div>
+      <div class = "row" id="computerChoice">
+        <button type="button" class = "rock">ROCK</button>
+        <button type="button" class = "paper">PAPER</button>
+        <button type="button" class = "scissors">SCISSORS</button>
+      </div>
+    </div>
+    <div id = "message">THIS IS A MESSAGE ABOUT THE GAME!</div>
+    <div id = "playerDisplay" class = "display">
+      <div class = "row" id="playerChoice">
+        <button type="button" id="rock" class = "rock">ROCK</button>
+        <button type="button" id="paper" class = "paper">PAPER</button>
+        <button type="button" id="scissors" class = "scissors">SCISSORS</button>
+      </div>
+      <div id = "playerHeader" class = "header">
+        <p id = "playerScore">0</p>
+        <p id = "playerName">PLAYER</p>
+      </div>
     </div>
   </div>
   
